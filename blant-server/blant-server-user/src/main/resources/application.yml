@@ -1,0 +1,55 @@
+server:
+    port: 8003
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+    client:
+        serviceUrl:
+            defaultZone: http://center:center@localhost:8761/eureka/
+
+logging:
+    level:
+        tk.mybatis: DEBUG
+        com.blant: DEBUG
+
+spring:
+    application:
+        name: server-user
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+    datasource:
+        name: test
+        url: jdbc:mysql://localhost:3306/blant_admin?useUnicode=true&characterEncoding=UTF8
+        username: blant_admin
+        password: blant_admin
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    zipkin:
+      base-url: http://127.0.0.1:9411
+
+mybatis:
+    basepackage: com.blant.admin.mapper
+    xmlLocation: classpath:mapper/**/*.xml
+
+feign:
+  hystrix:
+    enabled: true
+

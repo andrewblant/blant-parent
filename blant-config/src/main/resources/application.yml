@@ -1,0 +1,19 @@
+server:
+    port: 8771 #启动端口
+
+eureka:
+    instance:
+        statusPageUrlPath: /info
+        healthCheckUrlPath: /health
+    client:
+        serviceUrl:
+            defaultZone: http://center:center@${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+
+spring:
+    application:
+        name: blant-config
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/andrewblant/spring-cloud-config.git
