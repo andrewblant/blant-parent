@@ -140,10 +140,5 @@
     <!--<artifactId>guava</artifactId>-->
     <!--</dependency>-->
 
-    <!--<dependency>-->
-    <!--<groupId>com.github.wxiaoqi</groupId>-->
-    <!--<artifactId>ace-cache</artifactId>-->
-    <!--<version>0.0.2</version>-->
-    <!--</dependency>-->
   </dependencies>
 </project>

@@ -15,6 +15,7 @@
     <modules>
         <module>blant-common-util</module>
         <module>blant-common-mysql</module>
+        <module>blant-common-cache</module>
     </modules>
 
 </project>

@@ -58,7 +58,6 @@
     <module>blant-admin</module>
     <module>blant-server</module>
     <module>blant-sleuth</module>
-    <!--<module>ace-sidecar</module>-->
   </modules>
   <packaging>pom</packaging>
   <developers>
