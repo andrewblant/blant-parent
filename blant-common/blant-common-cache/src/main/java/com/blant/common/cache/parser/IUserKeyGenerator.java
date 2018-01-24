@@ -9,5 +9,5 @@ package com.blant.common.cache.parser;
  * @since 1.7
  */
 public interface IUserKeyGenerator {
-    public String getCurrentUserAccount();
+    String getCurrentUserAccount();
 }

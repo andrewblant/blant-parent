@@ -21,5 +21,5 @@ public interface ICacheResultParser {
      * @param origins
      * @return
      */
-    public Object parse(String value, Type returnType, Class<?>... origins);
+    Object parse(String value, Type returnType, Class<?>... origins);
 }

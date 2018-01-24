@@ -122,6 +122,8 @@ public class CacheRedis implements CacheAPI {
         try {
             cache = JSON.parseObject(redisCacheService.get(key),
                     CacheBean.class);
+
+            cache.setExpireTime(redisCacheService.getExpireDate(key));
         } catch (Exception e) {
             cache = new CacheBean();
             cache.setKey(key);
@@ -162,12 +164,14 @@ public class CacheRedis implements CacheAPI {
         } else {
             realValue = JSON.toJSONString(value, false);
         }
-        String realKey = CacheConstants.PRE + addSys(key);
-        Date time = new DateTime(redisCacheService.getExpireDate(realKey)).plusMinutes(expireMin).toDate();
-        CacheBean cache = new CacheBean(realKey, desc, time);
-        String result = JSON.toJSONString(cache, false);
-        redisCacheService.set(addSys(key), result, expireMin * 60);
-        redisCacheService.set(realKey, realValue, expireMin * 60);
+//        String realKey = CacheConstants.PRE + addSys(key);
+//        Date time = new DateTime(redisCacheService.getExpireDate(realKey)).plusMinutes(expireMin).toDate();
+//        CacheBean cache = new CacheBean(realKey, desc, time);
+//        String result = JSON.toJSONString(cache, false);
+//        redisCacheService.set(addSys(key), result, expireMin * 60);
+//        redisCacheService.set(realKey, realValue, expireMin * 60);
+
+        redisCacheService.set(addSys(key), realValue, expireMin * 60);
     }
 
     @Override
@@ -185,6 +189,7 @@ public class CacheRedis implements CacheAPI {
             try {
                 cache = JSON.parseObject(redisCacheService.get(key),
                         CacheBean.class);
+                cache.setExpireTime(redisCacheService.getExpireDate(key));
             } catch (Exception e) {
                 cache = new CacheBean();
                 cache.setKey(key);

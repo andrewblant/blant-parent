@@ -1,6 +1,8 @@
 package com.blant.common.cache.rest;
 
+import com.blant.common.cache.entity.User;
 import com.blant.common.cache.service.ICacheManager;
+import com.blant.common.cache.service.TestService;
 import java.util.List;
 
 import com.blant.common.cache.utils.TreeUtils;
@@ -17,8 +19,12 @@ import com.blant.common.cache.vo.CacheTree;
 @Controller
 @RequestMapping("cache")
 public class CacheRest {
+
   @Autowired
   private ICacheManager cacheManager;
+
+  @Autowired
+  private TestService testService;
 
   @RequestMapping("/list")
   @ResponseBody
@@ -65,5 +71,11 @@ public class CacheRest {
   @RequestMapping("")
   public String index() {
     return "/static/cache/index.html";
+  }
+
+  @RequestMapping(path = "/test/{name}", method = RequestMethod.GET)
+  @ResponseBody
+  public User test(@PathVariable("name") String name) {
+    return testService.getUser(name);
   }
 }

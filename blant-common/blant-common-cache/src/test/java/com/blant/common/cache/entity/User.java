@@ -1,8 +1,11 @@
 package com.blant.common.cache.entity;
 
+import lombok.ToString;
+
 /**
  * Created by Ace on 2017/5/21.
  */
+@ToString
 public class User {
     private String name;
     private int age;
