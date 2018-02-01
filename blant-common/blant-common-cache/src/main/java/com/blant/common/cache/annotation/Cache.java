@@ -52,14 +52,6 @@ public @interface Cache {
   int expire() default 720;
 
   /**
-   * 描述
-   *
-   * @author blant
-   * @date 2017年5月3日
-   */
-  String desc() default "";
-
-  /**
    * 返回类型
    *
    * @author blant

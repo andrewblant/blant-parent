@@ -4,6 +4,7 @@ import com.blant.common.cache.annotation.Cache;
 import com.blant.common.cache.entity.User;
 import com.blant.common.cache.service.TestService;
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @author blant
  * @create 2018/1/24 14:51
  */
-@Log4j
+@Slf4j
 @Service
 public class TestServiceImpl implements TestService{
 
