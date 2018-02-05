@@ -1,4 +1,4 @@
-FROM blant/jre8:1
+FROM blant/jre8:2
 VOLUME /tmp
 ADD blant-center.jar app.jar
 #RUN bash -c 'touch /app.jar'
