@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM blant/jre8:1
 VOLUME /tmp
 ADD blant-center.jar app.jar
 #RUN bash -c 'touch /app.jar'
