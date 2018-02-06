@@ -1,6 +1,5 @@
-FROM blant/jre8:2
+FROM blant/jre8:3
 VOLUME /tmp
 ADD blant-center.jar app.jar
-#RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 EXPOSE 8761
